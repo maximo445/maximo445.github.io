@@ -59,5 +59,142 @@ a {
     transform: translateY(0);
     opacity: 1; } }
 
+a:hover {
+  color: #bebebe; }
+
+a {
+  transition: color 0.5s ease-in-out; }
+
+* {
+  box-sizing: border-box; }
+
 body {
-  font-family: Verdana, Tahoma, sans-serif; }
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #ffff;
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+.about-leave {
+  opacity: 1; }
+
+.about-leave-active {
+  transition: opacity 1s linear; }
+
+.about-leave-to {
+  opacity: 0; }
+
+.about-enter {
+  opacity: 0; }
+
+.about-enter-active {
+  transition: opacity 1s linear; }
+
+.about-enter-to {
+  opacity: 1; }
+
+.portfolio-leave {
+  opacity: 1; }
+
+.portfolio-leave-active {
+  transition: opacity 0.75s linear; }
+
+.portfolio-leave-to {
+  opacity: 0; }
+
+.portfolio-enter {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  clip-path: circle(0%); }
+
+.portfolio-enter-active {
+  transition: clip-path 0.75s linear; }
+
+.portfolio-enter-to {
+  clip-path: circle(75%); }
+
+.transition {
+  height: 100vh;
+  width: 100%;
+  background: black; }
+
+.blog-leave-active,
+.blog-enter-active,
+.blog-leave-active .transition,
+.blog-enter-active .transition {
+  transition: all 0.75s linear; }
+
+.blog-leave .transition {
+  transform: translateY(-100%); }
+
+.blog-leave-to .transition {
+  transform: translateY(0); }
+
+.blog-enter .transition {
+  transform: translateY(0); }
+
+.blog-enter-to .transition {
+  transform: translateY(100%); }
+
+body {
+  font-family: Verdana, Tahoma, sans-serif;
+  position: relative; }
+
+#index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100vh);
+  width: 100%;
+  background: pink; }
+
+#about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100vh);
+  width: 100%;
+  background: plum; }
+
+#portfolio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100vh);
+  width: 100%;
+  background: yellow; }
+
+#blog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100vh);
+  width: 100%;
+  background: aqua; }
+
+#contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: calc(100vh);
+  width: 100%;
+  background: blanchedalmond; }
+
+.barba-once {
+  opacity: 0.2; }
+
+.barba-once-active {
+  transition: opacity 1s 0.4s linear; }
+
+.barba-once-to {
+  opacity: 1; }
