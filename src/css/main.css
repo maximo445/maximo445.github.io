@@ -12,6 +12,10 @@ a {
 ul {
   list-style: none; }
 
+.is-transitioning {
+  pointer-events: none;
+  cursor: progress; }
+
 a:hover {
   color: #bebebe; }
 
@@ -59,6 +63,10 @@ a {
     transform: translateY(0);
     opacity: 1; } }
 
+.is-transitioning {
+  pointer-events: none;
+  cursor: progress; }
+
 a:hover {
   color: #bebebe; }
 
@@ -79,23 +87,64 @@ a {
 ul {
   list-style: none; }
 
-.about-leave {
-  opacity: 1; }
-
-.about-leave-active {
-  transition: opacity 1s linear; }
-
-.about-leave-to {
-  opacity: 0; }
-
-.about-enter {
-  opacity: 0; }
-
-.about-enter-active {
-  transition: opacity 1s linear; }
-
-.about-enter-to {
-  opacity: 1; }
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #about-intro .top {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    /* Three columns each 100px wide */
+    grid-gap: 10px;
+    border-bottom: 0.5px solid #818181; }
+    #about-intro .top .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(-300px); }
+    #about-intro .top .about-image {
+      height: 400px;
+      width: 400px;
+      background: url("../img/art-photo.png") no-repeat center center/cover;
+      opacity: 0;
+      transform: translateX(300px); }
+  #about-skills {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #about-skills .container {
+      display: grid;
+      grid-template-columns: repeat(3, 300px);
+      /* Three columns each 100px wide */
+      grid-gap: 10px;
+      place-items: center; }
+      #about-skills .container .left .concept {
+        padding-inline-start: 0; }
+      #about-skills .container .center {
+        background: url("../img/skills-section.png") no-repeat center center/cover;
+        width: 200px;
+        height: 200px; }
+      #about-skills .container .right .concept {
+        padding-inline-start: 0; }
+  #about-story .container .right .img {
+    position: relative;
+    background: url("../img/workspace-story-section.jpg") no-repeat center center/cover;
+    width: 200px;
+    height: 200px; }
+    #about-story .container .right .img .bubble {
+      position: absolute;
+      top: -10px;
+      left: -50px;
+      background: url("../img/my-story-i.jpg") no-repeat center center/cover;
+      width: 100px;
+      height: 100px;
+      border: 3px solid #fff;
+      border-radius: 50%; }
 
 .portfolio-leave {
   opacity: 1; }
@@ -123,78 +172,94 @@ ul {
   width: 100%;
   background: black; }
 
-.blog-leave-active,
-.blog-enter-active,
-.blog-leave-active .transition,
-.blog-enter-active .transition {
-  transition: all 0.75s linear; }
+.blogy-leave-active,
+.blogy-enter-active,
+.blogy-leave-active .transition,
+.blogy-enter-active .transition {
+  transition: transform 0.75s ease-in-out; }
 
-.blog-leave .transition {
+.blogy-leave .transition {
   transform: translateY(-100%); }
 
-.blog-leave-to .transition {
+.blogy-leave-to .transition {
   transform: translateY(0); }
 
-.blog-enter .transition {
+.blogy-enter .transition {
   transform: translateY(0); }
 
-.blog-enter-to .transition {
+.blogy-enter-to .transition {
   transform: translateY(100%); }
+
+.is-transitioning {
+  pointer-events: none;
+  cursor: progress; }
+
+a:hover {
+  color: #bebebe; }
+
+a {
+  transition: color 0.5s ease-in-out; }
 
 body {
   font-family: Verdana, Tahoma, sans-serif;
   position: relative; }
 
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  background-color: #f14747;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0; }
+
 #index {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: calc(100vh);
   width: 100%;
+  padding-top: 110px;
+  z-index: -1;
   background: pink; }
 
 #about {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: calc(100vh);
   width: 100%;
-  background: plum; }
+  padding-top: 110px;
+  z-index: -1;
+  background: #fff; }
 
 #portfolio {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: calc(100vh);
   width: 100%;
+  padding-top: 110px;
+  z-index: -1;
   background: yellow; }
 
 #blog {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: calc(100vh);
   width: 100%;
+  padding-top: 110px;
+  z-index: -1;
   background: aqua; }
 
 #contact {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: calc(100vh);
   width: 100%;
+  padding-top: 110px;
+  z-index: -1;
   background: blanchedalmond; }
 
-.barba-once {
-  opacity: 0.2; }
-
-.barba-once-active {
-  transition: opacity 1s 0.4s linear; }
-
-.barba-once-to {
-  opacity: 1; }
+.fadeIn {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  transition: all 1.2s ease-in-out; }
