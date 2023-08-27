@@ -97,6 +97,7 @@ ul {
     grid-template-columns: repeat(2, 400px);
     /* Three columns each 100px wide */
     grid-gap: 10px;
+    place-items: center;
     border-bottom: 0.5px solid #818181; }
     #about-intro .top .about-text {
       display: flex;
@@ -113,7 +114,7 @@ ul {
       transform: translateX(300px); }
   #about-skills {
     width: 100%;
-    height: 100vh;
+    height: 550px;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -125,26 +126,51 @@ ul {
       place-items: center; }
       #about-skills .container .left .concept {
         padding-inline-start: 0; }
-      #about-skills .container .center {
+      #about-skills .container .center-up {
         background: url("../img/skills-section.png") no-repeat center center/cover;
         width: 200px;
-        height: 200px; }
+        height: 200px;
+        transform: translateY(200px);
+        opacity: 0; }
       #about-skills .container .right .concept {
         padding-inline-start: 0; }
-  #about-story .container .right .img {
-    position: relative;
-    background: url("../img/workspace-story-section.jpg") no-repeat center center/cover;
-    width: 200px;
-    height: 200px; }
-    #about-story .container .right .img .bubble {
-      position: absolute;
-      top: -10px;
-      left: -50px;
-      background: url("../img/my-story-i.jpg") no-repeat center center/cover;
-      width: 100px;
-      height: 100px;
-      border: 3px solid #fff;
-      border-radius: 50%; }
+  #about-story {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px; }
+    #about-story .container {
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      /* Three columns each 100px wide */
+      grid-gap: 10px;
+      place-items: center; }
+      #about-story .container .left {
+        padding: 30px;
+        transform: translateY(-200px);
+        opacity: 0; }
+        #about-story .container .left a {
+          color: #333 !important; }
+      #about-story .container .right {
+        transform: translateY(200px);
+        opacity: 0;
+        padding: 30px; }
+        #about-story .container .right .img {
+          position: relative;
+          background: url("../img/workspace-story-section.jpg") no-repeat center center/cover;
+          width: 270px;
+          height: 270px;
+          border-radius: 5px; }
+          #about-story .container .right .img .bubble {
+            position: absolute;
+            top: 30px;
+            left: -65px;
+            background: url("../img/my-story-i.jpg") no-repeat center center/cover;
+            width: 130px;
+            height: 130px;
+            border: 3px solid #fff;
+            border-radius: 50%; }
 
 .portfolio-leave {
   opacity: 1; }
@@ -261,5 +287,15 @@ body {
 
 .fadeIn {
   transform: translateX(0) !important;
+  opacity: 1 !important;
+  transition: all 1.2s ease-in-out; }
+
+.fadeIn-Up {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition: all 1.2s ease-in-out; }
+
+.fadeIn-vertical {
+  transform: translateY(0) !important;
   opacity: 1 !important;
   transition: all 1.2s ease-in-out; }

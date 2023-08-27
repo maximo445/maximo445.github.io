@@ -2,26 +2,35 @@ import gsap from "gsap";
 const barba = require('@barba/core');
 
 function checkSectionInView(sections) {
+    console.log('function called');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         const isVisible = rect.top + 200 < window.innerHeight && rect.bottom >= 0;
-        const left = section.querySelector('.about-text');
-        const right = section.querySelector('.about-image');
         if (isVisible) {
+            const left = section.querySelector('.about-text');
+            const right = section.querySelector('.about-image');
+            const centerUp = section.querySelector('.center-up');
+            const leftAboutStory = section.querySelector('#about-story .left');
+            const rightAboutStory = section.querySelector('#about-story .right');
             if(left && right) {
                 setTimeout(() => {
                     left.classList.add('fadeIn');
                     right.classList.add('fadeIn');
                     console.log('fade in');
                 }, 100);                    
+            } else if (centerUp) {
+                centerUp.classList.add('fadeIn-Up');
+            } else if (leftAboutStory && rightAboutStory) {
+                leftAboutStory.classList.add('fadeIn-vertical');
+                rightAboutStory.classList.add('fadeIn-vertical');
             }
-        } else {
-            if(left && right) {
-                left.classList.remove('fadeIn');
-                right.classList.remove('fadeIn');
-                console.log('fade out');
-            }
-        }
+        } // else {
+        //     if(left && right) {
+        //         left.classList.remove('fadeIn');
+        //         right.classList.remove('fadeIn');
+        //         console.log('fade out');
+        //     }
+        // }
     });
 }
 
@@ -78,19 +87,28 @@ barba.init({
         },
         enter() {
             loaderAway();
-            const sections = document.querySelectorAll("section");
-            checkSectionInView(sections);
+            // const sections = document.querySelectorAll("section");
+            // checkSectionInView(sections);
         }
     }]
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("section"); // Get all sections
 
+    console.log(sections);
+
     // Attach the event listener to scroll
-    window.addEventListener("scroll", checkSectionInView(sections));
-    window.addEventListener("resize", checkSectionInView(sections));
+
+    const scroller = window.addEventListener("scroll", () => {
+            checkSectionInView(sections);
+    });
+    window.addEventListener("resize", () => {
+        checkSectionInView(sections);
+    });
+
+    console.log(scroller);
+
 
     // Initial check when the page loads
     checkSectionInView(sections);
