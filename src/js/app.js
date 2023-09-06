@@ -7,7 +7,11 @@ function checkSectionInView(sections) {
         const rect = section.getBoundingClientRect();
         const isVisible = rect.top + 200 < window.innerHeight && rect.bottom >= 0;
         if (isVisible) {
+<<<<<<< HEAD
             //intro section portion
+=======
+            //intro section
+>>>>>>> 4cc6a5094e19e7e85f9c329fad890418cf894607
             const left = section.querySelector('.about-text');
             const right = section.querySelector('.about-image');
             const photos = section.querySelector('.photo');
