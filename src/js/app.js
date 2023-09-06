@@ -1,5 +1,5 @@
-import gsap from "gsap";
-const barba = require('@barba/core');
+// import gsap from "gsap";
+// const barba = require('@barba/core');
 
 function checkSectionInView(sections) {
     console.log('function called');
@@ -42,49 +42,49 @@ function checkSectionInView(sections) {
 
 const loader = document.querySelector('.loader');
 
-barba.hooks.before(() => {
-    document.querySelector('html').classList.add('is-transitioning');
-})
+// barba.hooks.before(() => {
+//     document.querySelector('html').classList.add('is-transitioning');
+// })
 
-barba.hooks.after(() => {
-    document.querySelector('html').classList.remove('is-transitioning');
-})
+// barba.hooks.after(() => {
+//     document.querySelector('html').classList.remove('is-transitioning');
+// })
 
-const loaderIn = () => {
-    return gsap.fromTo(loader, {
-        rotation: 10, 
-        scaleX: 0, 
-        xPercent: -5
-    }, 
-    {
-        duration: 0.8,
-        xPercent: 0, 
-        scaleX: 1,
-        rotation: 0, 
-        ease: 'power4.inOut', 
-        transformOrigin: 'left center'
-    });
-}
+// const loaderIn = () => {
+//     return gsap.fromTo(loader, {
+//         rotation: 10, 
+//         scaleX: 0, 
+//         xPercent: -5
+//     }, 
+//     {
+//         duration: 0.8,
+//         xPercent: 0, 
+//         scaleX: 1,
+//         rotation: 0, 
+//         ease: 'power4.inOut', 
+//         transformOrigin: 'left center'
+//     });
+// }
 
-const loaderAway = () => {
-    return gsap.to(loader, {
-        duration: 0.8,
-        scaleX: 0,
-        xPercent: 5,
-        rotation: -10,
-        transformOrigin: 'right center',
-        ease: 'power4.inOut'
-    });
-}
+// const loaderAway = () => {
+//     return gsap.to(loader, {
+//         duration: 0.8,
+//         scaleX: 0,
+//         xPercent: 5,
+//         rotation: -10,
+//         transformOrigin: 'right center',
+//         ease: 'power4.inOut'
+//     });
+// }
 
-gsap.set('.loader', {
-    scaleX: 0,
-    rotation: 10,
-    xPercent: -5,
-    yPercent: -50,
-    transformOrigin: 'left center',
-    autoAlpha: 1
-});
+// gsap.set('.loader', {
+//     scaleX: 0,
+//     rotation: 10,
+//     xPercent: -5,
+//     yPercent: -50,
+//     transformOrigin: 'left center',
+//     autoAlpha: 1
+// });
 
 // barba.init({
 //     transitions: [{
