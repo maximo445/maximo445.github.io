@@ -7,22 +7,28 @@ function checkSectionInView(sections) {
         const rect = section.getBoundingClientRect();
         const isVisible = rect.top + 200 < window.innerHeight && rect.bottom >= 0;
         if (isVisible) {
+            //intro section
             const left = section.querySelector('.about-text');
             const right = section.querySelector('.about-image');
+            const photos = section.querySelector('.photo');
+            // skills section
             const centerUp = section.querySelector('.center-up');
+            //about story section
             const leftAboutStory = section.querySelector('#about-story .left');
             const rightAboutStory = section.querySelector('#about-story .right');
             if(left && right) {
                 setTimeout(() => {
                     left.classList.add('fadeIn');
                     right.classList.add('fadeIn');
-                    console.log('fade in');
+                    setTimeout(() => {
+                        photos.classList.add('fadeIn');                        
+                    }, 600);
                 }, 100);                    
             } else if (centerUp) {
                 centerUp.classList.add('fadeIn-Up');
             } else if (leftAboutStory && rightAboutStory) {
                 leftAboutStory.classList.add('fadeIn-vertical');
-                rightAboutStory.classList.add('fadeIn-vertical');
+                rightAboutStory.classList.add('fadeIn');
             }
         } // else {
         //     if(left && right) {
@@ -80,35 +86,31 @@ gsap.set('.loader', {
     autoAlpha: 1
 });
 
-barba.init({
-    transitions: [{
-        async leave() {
-            await loaderIn();
-        },
-        enter() {
-            loaderAway();
-            // const sections = document.querySelectorAll("section");
-            // checkSectionInView(sections);
-        }
-    }]
-});
+// barba.init({
+//     transitions: [{
+//         async leave() {
+//             await loaderIn();
+//         },
+//         enter({current}) {
+//             loaderAway();
+//             console.log(current);
+//         }
+//     }]
+// });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll("section"); // Get all sections
 
-    console.log(sections);
+    const sections = document.querySelectorAll("section"); // Get all sections
 
     // Attach the event listener to scroll
 
     const scroller = window.addEventListener("scroll", () => {
             checkSectionInView(sections);
     });
+
     window.addEventListener("resize", () => {
         checkSectionInView(sections);
     });
-
-    console.log(scroller);
-
 
     // Initial check when the page loads
     checkSectionInView(sections);
