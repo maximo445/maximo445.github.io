@@ -7,17 +7,17 @@
     <script src="https://kit.fontawesome.com/0984bf48ef.js" crossorigin="anonymous"></script>
     <title>Maximo Brito</title>
 </head>
-<body>
+<body data-barba="wrapper">
 
     <nav id="navigation">
         <div class="container">
-            <div id="logo"></div>
+            <a href="index.html"><div id="logo"></div></a>
             <div class="places">
                 <ul class="links">
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">portfolio</a></li>
-                    <li><a href="#">blog</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="portfolio.html">portfolio</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="contact.html">contact</a></li>
                 </ul>
                 <ul class="social-media">
                     <li><a href="#"><i class="fab fa-linkedin-in fa-lg"></i></a></li>
@@ -26,8 +26,74 @@
             </div>
         </div>
     </nav>
-
-    
-    
+    <main id="about" data-barba="container" data-barba-namespace="about">
+        <div class="loader"></div>
+        <section id="about-intro">
+            <div class="container">
+                <div class="top">
+                    <div class="about-text">
+                        <div class="container">
+                            <h2>About.</h2>
+                            <p class="short-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex omnis iure eveniet!</p>
+                            <p class="long-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, vel voluptates! Recusandae temporibus dolorum ratione officiis perferendis ipsam facilis facere similique?</p>                        
+                        </div>
+                    </div>
+                    <div class="about-image"></div>
+                </div>
+                <div class="bottom">
+                    <ul class="photo">
+                        <li class="photo-1 photo-item"></li>
+                        <li class="photo-2 photo-item"></li>
+                        <li class="photo-3 photo-item"></li>
+                        <li class="photo-4 photo-item"></li>
+                        <li class="photo-5 photo-item"></li>
+                        <li class="photo-6 photo-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="about-skills">
+           <div class="container">
+                <div class="left">
+                    <h2 class="title">Life Skills</h2>
+                    <ul class="concept">
+                        <li class="item">Problem Solving</li>
+                        <li class="item">Team Work</li>
+                        <li class="item">Discipline</li>
+                        <li class="item">Organization</li>
+                        <li class="item">Self Learning</li>
+                    </ul>
+                </div>
+                <div class="center-up"></div>
+                <div class="right">
+                    <h2 class="title">Coding Skill</h2>
+                    <ul class="concept">
+                        <li class="item">Front-end devolopment</li>
+                        <li class="item">HTML/CSS</li>
+                        <li class="item">Javascript</li>
+                        <li class="item">Debugging</li>
+                        <li class="item">Patience</li>
+                    </ul>
+                </div>
+           </div>
+        </section>
+        <section id="about-story">
+            <div class="container">
+                <div class="left">
+                    <h2 class="title">My Story</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet enim, rem exercitationem et iusto aperiam nam veniam. Est, mollitia doloremque.
+                    </p>
+                    <a href="#">Read my story</a>
+                </div>
+                <div class="right">
+                    <div class="img">
+                        <div class="bubble"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./js/app.js" defer></script>
 </body>
 </html>
